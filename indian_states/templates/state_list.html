@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>State List</title>
+</head>
+<body>
+    <h1>State List</h1>
+    <ul>
+        {% for state in object_list %}
+            <li><a href="{% url 'state_detail' state.pk %}">{{ state.name }}</a></li>
+        {% empty %}
+            <li>No states available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'state_create' %}">Add State</a>
+</body>
+</html>
